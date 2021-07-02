@@ -1,0 +1,71 @@
+{
+	"info": {
+		"_postman_id": "b886dc59-80b5-40f2-98ac-52f45aa926db",
+		"name": "stadium booking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get available slots",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/pitch/slots?date=2021-10-08&pitch_id=1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"pitch",
+						"slots"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2021-10-08"
+						},
+						{
+							"key": "pitch_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "book slot",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "slot_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "reservation_date",
+							"value": "2021-10-08",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/pitch/slot/book",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"pitch",
+						"slot",
+						"book"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
